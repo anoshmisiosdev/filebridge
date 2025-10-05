@@ -1,6 +1,11 @@
 # blinkbridge
 
-**Note**: there is an issue related to local storage systems; please see issue [#1](https://github.com/roger-/blinkbridge/issues/1) for a temporary fix until it's resolved.
+**Notes**: 
+
+* There is an issue related to local storage systems; please see issue [#1](https://github.com/roger-/blinkbridge/issues/1) for a temporary fix until it's resolved. 
+* Disable the "Photo Capture" feature in the Blink app for each supported camera to work around an issue where photos can prevent videos from being recognized by BlinkPy.
+
+---
 
 blinkbridge is a tool for creating an RTSP stream from a [Blink camera](https://blinkforhome.com/) using [FFmpeg](https://ffmpeg.org/) and [MediaMTX](https://github.com/bluenviron/mediamtx). Blink cameras are battery operated and don't have native RTSP support, so this tool uses the [BlinkPy](https://github.com/fronzbot/blinkpy) Python library to download clips every time motion is detected and then creates an RTSP stream from them. 
 
@@ -34,3 +39,4 @@ Once the RTSP streams are available, you can use them in applications such as [F
 # Related projects
 
 * https://github.com/kaffetorsk/arlo-streamer
+
