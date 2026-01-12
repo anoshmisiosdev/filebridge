@@ -1,15 +1,11 @@
-# blinkbridge
+# FileBridge
 
 **Notes**: 
 
-* There is an issue related to local storage systems; please see issue [#1](https://github.com/roger-/blinkbridge/issues/1) for a temporary fix until it's resolved. 
-* Disable the "Photo Capture" feature in the Blink app for each supported camera to work around an issue where photos can prevent videos from being recognized by BlinkPy.
 
 ---
 
-blinkbridge is a tool for creating an RTSP stream from a [Blink camera](https://blinkforhome.com/) using [FFmpeg](https://ffmpeg.org/) and [MediaMTX](https://github.com/bluenviron/mediamtx). Blink cameras are battery operated and don't have native RTSP support, so this tool uses the [BlinkPy](https://github.com/fronzbot/blinkpy) Python library to download clips every time motion is detected and then creates an RTSP stream from them. 
-
-Due to the slow polling rate of BlinkPy, there will be a **delay of up to ~30 seconds** between when a motion is detected and when the RTSP stream updates (can be changed at risk of the Blink server banning you). The RTSP stream will persist the last recorded frame (i.e. a static video) until the next motion is detected.
+This is a more agnostic solution for camera systems that allow local storage systems like Arlo and Blink to be properly RTSP'd into applications like Frigate.
 
 Once the RTSP streams are available, you can use them in applications such as [Frigate NVR](https://github.com/blakeblackshear/frigate) (e.g. for better person detection) or [Scrypted](https://github.com/koush/scrypted) (e.g. for Homekit Secure Video support).
 
@@ -28,15 +24,9 @@ Once the RTSP streams are available, you can use them in applications such as [F
 3. Run `docker compose run blinkbridge` and enter your Blink verification code when prompted (this only has to be done once and will be saved in `config/.cred.json`). Exit with CTRL+c
 4. Run `docker compose up` to start the service. The RTSP URLs will be printed to the console.
 
-# TODO
-
-- [ ] Better error handling
-- [ ] Cleanup code
-- [ ] Support FFmpeg hardware acceleration (e.g. QSV)
-- [ ] Process cameras in parallel and reduce latency
-- [ ] Add ONVIF server with motion events
 
 # Related projects
 
 * https://github.com/kaffetorsk/arlo-streamer
+
 
