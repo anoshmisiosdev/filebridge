@@ -9,15 +9,8 @@
       "enabled": [],
       "disabled": [],
       "max_failures": 3,
-      "restart_delay_seconds": 60
-    },
-    "blink": {
-      "login": {
-        "username": "EMAIL_ADDRESS_HERE",
-        "password": "PASSWORD_HERE"
-      },
-      "history_days": 90,
-      "poll_interval": 1
+      "restart_delay_seconds": 60,
+      "blink_root": "/path/to/blink/storage"
     },
     "rtsp_server": {
       "address": "mediamtx",

@@ -12,6 +12,8 @@ COMMON_FFMPEG_ARGS = [
     '-hide_banner',
     '-loglevel', 'error',
     '-y',
+    '-hwaccel', 'cuda',
+    '-hwaccel_output_format', 'cuda',
 ]
 
 CONFIG = None

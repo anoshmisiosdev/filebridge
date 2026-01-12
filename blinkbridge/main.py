@@ -20,9 +20,6 @@ class Application:
         self.running = False
 
     async def start_stream(self, camera_name: str, redownload: bool=False) -> StreamServer:
-        if redownload:
-            await self.cam_manager.refresh_metadata()
-
         log.debug(f"{camera_name}: getting latest clip")
         file_name_initial_video = await self.cam_manager.save_latest_clip(camera_name, force=redownload)
 
